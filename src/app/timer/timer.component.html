@@ -1,4 +1,9 @@
 <main #mainContainer class="timer__inner">
-	<h1 class="timer__title"></h1>
-	<h3 class="timer__text"></h3>
+	<div class="timer__content">
+		<h1 class="timer__title" *ngIf="remainedDays && timeRemainder">
+			{{remainedDays}} DAYS {{timeRemainder}} <br>
+			TIL {{countdownDate | date : "dd/MM/yyyy"}}
+		</h1>
+		<h3 class="timer__text"></h3>
+	</div>
 </main>

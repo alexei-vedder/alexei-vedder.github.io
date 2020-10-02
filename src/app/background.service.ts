@@ -16,10 +16,10 @@ export class BackgroundService {
 
 		const currentQuarter: number = this.timeService.getCurrentQuarter();
 		switch (currentQuarter) {
-			case 1: return BackgroundService.IMAGE_PATH + "spring.jpg";
-			case 2: return BackgroundService.IMAGE_PATH + "summer.jpg";
-			case 3: return BackgroundService.IMAGE_PATH + "fall.jpg";
-			case 4: return BackgroundService.IMAGE_PATH + "winter.jpg";
+			case 1: return BackgroundService.IMAGE_PATH + "winter.jpg";
+			case 2: return BackgroundService.IMAGE_PATH + "spring.jpg";
+			case 3: return BackgroundService.IMAGE_PATH + "summer.jpg";
+			case 4: return BackgroundService.IMAGE_PATH + "fall.jpg";
 		}
 	}
 }

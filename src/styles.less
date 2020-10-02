@@ -1,3 +1,12 @@
+@color-text: white;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: "Arial Black";
+	cursor: default;
+}
+
 .timer {
 	&__inner {
 		height: 100vh;
@@ -5,5 +14,29 @@
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: cover;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__content {
+		background-color: black;
+		filter: opacity(60%);
+		padding: 20px;
+		margin: 20px;
+	}
+
+	&__title {
+		font-size: 70px;
+		color: @color-text;
+
+		@media(max-width: 400px) {
+			font-size: 45px;
+		}
+
+		@media(min-width: 400px) and (max-width: 500px) {
+			font-size: 55px;
+		}
 	}
 }

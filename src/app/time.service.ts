@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {getQuarter, isToday} from "date-fns";
+import {differenceInDays, format, getQuarter, intervalToDuration, isToday} from "date-fns";
 
 @Injectable()
 export class TimeService {
@@ -8,7 +8,7 @@ export class TimeService {
 	}
 
 	public getCurrentQuarter(): number {
-		return getQuarter(new Date());
+		return getQuarter(Date.now());
 	}
 
 	public getDate(day: string, month: string, year: string): Date {
@@ -17,5 +17,19 @@ export class TimeService {
 
 	public isToday(date: Date): boolean {
 		return isToday(date);
+	}
+
+	public getRemainedTime(countdownDate: Date): {days: number, formattedTimeRemainder: string} {
+		const days = differenceInDays(countdownDate, Date.now());
+
+		const {hours, minutes, seconds} = intervalToDuration({
+			start: Date.now(),
+			end: countdownDate
+		});
+
+		return {
+			days,
+			formattedTimeRemainder: format(new Date(0, 0, 0, hours, minutes, seconds), "hh:mm:ss")
+		}
 	}
 }
