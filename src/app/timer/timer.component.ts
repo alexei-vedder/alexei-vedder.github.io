@@ -34,7 +34,7 @@ export class TimerComponent implements OnInit, AfterViewInit {
 	}
 
 	private resolveBackground() {
-		const backgroundImageValue = "url(" + this.backgroundService.getBackgroundUrl(this.countdownDate) + ")";
+		const backgroundImageValue = `url( ${this.backgroundService.getBackgroundUrl(this.countdownDate)} )`;
 		this.renderer.setStyle(this.mainContainer.nativeElement, "background-image", backgroundImageValue);
 	}
 }

@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TimerComponent} from "./timer/timer.component";
+import {DateSelectComponent} from "./date-select/date-select.component";
 
 
 const routes: Routes = [
-	// TODO {path: "", component: ChooseDateComponent},
+	{path: "", component: DateSelectComponent},
 	{path: ":day/:month/:year", component: TimerComponent},
 ];
 
