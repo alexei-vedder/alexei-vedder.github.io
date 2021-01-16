@@ -46,6 +46,6 @@ testem.log
 Thumbs.db
 
 # compiled css
-*.css
 *.css.map
+
 /package-lock.json
