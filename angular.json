@@ -50,6 +50,11 @@
 						"aot": true,
 						"assets": [
 							"src/favicon.ico",
+							{
+								"glob": "404.html",
+								"input": "src/",
+								"output": "/"
+							},
 							"src/assets/images/"
 						],
 						"styles": [
