@@ -6,4 +6,5 @@ export enum Images {
 	FALL = "fall.jpg"
 }
 
-export const IMAGES_PATH = "/assets/images/";
+const BASE_HREF = "/countdown-timer";
+export const IMAGES_PATH = BASE_HREF + "/assets/images/";
