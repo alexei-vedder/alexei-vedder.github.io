@@ -13,7 +13,8 @@ import {Router} from "@angular/router";
 export class AppComponent {
 	constructor(private router: Router) {
 		let path = localStorage.getItem('path');
-		if (path) {
+		console.log(path)
+		if (path && path.trim()) {
 			localStorage.removeItem('path');
 			this.router.navigate([path]);
 		}
