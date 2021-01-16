@@ -29,7 +29,6 @@ export class DynamicBackgroundDirective implements OnInit {
 	private resolveBackgroundImage(): void {
 		const backgroundImageStyleValue = this.backgroundService.getBackgroundImageStyleValue()
 		if (this.element.nativeElement.backgroundImage !== backgroundImageStyleValue) {
-			console.log("CHANGED", this.element.nativeElement.backgroundImage, backgroundImageStyleValue);
 			this.renderer.setStyle(
 				this.element.nativeElement,
 				"background-image",
