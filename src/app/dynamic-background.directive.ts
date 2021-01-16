@@ -1,5 +1,7 @@
 import {Directive, ElementRef, HostBinding, OnInit, Renderer2} from '@angular/core';
 import {BackgroundService} from "./background.service";
+import {NavigationEnd, Router} from "@angular/router";
+import {filter} from "rxjs/operators";
 
 @Directive({
 	selector: '[dynamicBackground]',
@@ -12,11 +14,16 @@ export class DynamicBackgroundDirective implements OnInit {
 
 	constructor(private element: ElementRef,
 				private backgroundService: BackgroundService,
-				private renderer: Renderer2) {
+				private renderer: Renderer2,
+				private router: Router) {
 	}
 
 	public ngOnInit(): void {
-		this.resolveBackgroundImage();
+		this.router.events
+			.pipe(filter(event => event instanceof NavigationEnd))
+			.subscribe(() => {
+				this.resolveBackgroundImage();
+			});
 	}
 
 	private resolveBackgroundImage(): void {

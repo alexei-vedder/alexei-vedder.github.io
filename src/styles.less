@@ -1,12 +1,18 @@
-@color-text: white;
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-// TODO refactor classes
+@color-text: white;
+@header-height: 100px;
+
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	font-family: "Arial Black";
 	cursor: default;
+
+	&:focus {
+		outline: none;
+	}
 }
 
 html, body {
@@ -17,6 +23,16 @@ body {
 	margin: 0;
 }
 
+.header {
+	cursor: pointer;
+	height: @header-height;
+	margin-top: -@header-height;
+	padding: 30px 50px;
+	position: sticky;
+	top: 0;
+	.adaptive-font-size(55px);
+	color: RGBA(0, 0, 0, 0.65);
+}
 
 .container {
 	height: 100vh;
@@ -24,6 +40,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	transition-duration: 0.3s;
 }
 
 .background {
@@ -35,20 +52,36 @@ body {
 
 .content {
 	background-color: black;
-	filter: opacity(60%);
+	filter: opacity(0.6);
+	padding: 20px;
+	margin: 20px;
+	transition-duration: 0.3s;
+
+	&__title {
+		color: @color-text;
+		.adaptive-font-size(70px);
+	}
+}
+
+.adaptive-font-size(@base-size) {
+	font-size: @base-size;
+
+	@media (max-width: 400px) {
+		font-size: @base-size * 0.64;
+	}
+
+	@media (min-width: 400px) and (max-width: 500px) {
+		font-size: @base-size * 0.8;
+	}
+}
+
+.date-picker {
+	background-color: RGBA(255, 255, 255, 0.5);
+	font-size: x-large;
 	padding: 20px;
 	margin: 20px;
 
-	&__title {
-		font-size: 70px;
-		color: @color-text;
-
-		@media (max-width: 400px) {
-			font-size: 45px;
-		}
-
-		@media (min-width: 400px) and (max-width: 500px) {
-			font-size: 55px;
-		}
+	& > .mat-form-field {
+		width: 320px;
 	}
 }

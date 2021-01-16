@@ -6,19 +6,17 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
 	selector: 'timer',
 	template: `
-		<main class="">
-			<div class="content">
-				<h1 class="content__title">
-					<ng-container *ngIf="remainedDays && timeRemainder">
-						{{remainedDays}} DAYS {{timeRemainder}} <br>
-						TILL {{countdownDate | date : "MM/dd/yyyy"}}
-					</ng-container>
-					<ng-container *ngIf="remainedDays === 0">
-						THE DAY HAS COME!
-					</ng-container>
-				</h1>
-			</div>
-		</main>
+		<div class="content">
+			<h1 class="content__title">
+				<ng-container *ngIf="remainedDays && timeRemainder">
+					{{remainedDays}} DAYS {{timeRemainder}} <br>
+					TILL {{countdownDate | date : "MM/dd/yyyy"}}
+				</ng-container>
+				<ng-container *ngIf="remainedDays === 0">
+					THE DAY HAS COME!
+				</ng-container>
+			</h1>
+		</div>
 	`
 })
 export class TimerComponent implements OnInit, AfterViewInit {

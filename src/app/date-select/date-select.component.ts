@@ -1,4 +1,5 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
 	selector: 'date-select',
@@ -9,23 +10,27 @@ import {AfterViewInit, Component} from '@angular/core';
 					Select the date you want to count to
 				</p>
 			</div>
-			<mat-form-field class="example-full-width" appearance="fill">
-				<mat-label>Choose a date</mat-label>
-				<input matInput [matDatepicker]="picker">
-				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-				<mat-datepicker touchUi #picker></mat-datepicker>
-			</mat-form-field>
+			<div class="date-picker">
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Choose a date</mat-label>
+					<input (dateChange)="redirectTo($event.value)" matInput [matDatepicker]="picker">
+					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+					<mat-datepicker touchUi #picker></mat-datepicker>
+				</mat-form-field>
+			</div>
+
 		</main>
 	`,
 	styles: []
 })
-export class DateSelectComponent implements AfterViewInit {
+export class DateSelectComponent {
 
-	// TODO datepicker
-
-	constructor() {
+	constructor(private router: Router) {
 	}
 
-	ngAfterViewInit(): void {
+	redirectTo(date) {
+		setTimeout(() => {
+			this.router.navigate([`/${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`])
+		});
 	}
 }
