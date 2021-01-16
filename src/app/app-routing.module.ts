@@ -6,7 +6,7 @@ import {DateSelectComponent} from "./date-select/date-select.component";
 
 const routes: Routes = [
 	{path: "", component: DateSelectComponent},
-	{path: ":day/:month/:year", component: TimerComponent},
+	{path: ":month/:day/:year", component: TimerComponent},
 ];
 
 @NgModule({
