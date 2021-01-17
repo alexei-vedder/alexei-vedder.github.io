@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 @Component({
 	selector: 'date-select',
 	template: `
-		<main class="container">
+		<div class="container">
 			<div class="content">
 				<p class="content__title">
 					Select the date you want to count to
@@ -18,8 +18,7 @@ import {Router} from "@angular/router";
 					<mat-datepicker touchUi #picker></mat-datepicker>
 				</mat-form-field>
 			</div>
-
-		</main>
+		</div>
 	`,
 	styles: []
 })

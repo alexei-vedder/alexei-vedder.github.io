@@ -4,7 +4,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 @Component({
 	selector: 'background-dialog',
 	template: `
-		<h1>Enter your background url</h1>
+		<p class="title">Enter your background url</p>
 		<div mat-dialog-content>
 			<mat-form-field>
 				<mat-label>URL</mat-label>
@@ -14,10 +14,9 @@ import {MatDialogRef} from "@angular/material/dialog";
 		<div mat-dialog-actions>
 			<button *ngIf="isCustomBackgroundApplied" mat-button (click)="reset()">Reset</button>
 			<button mat-button (click)="cancel()">Cancel</button>
-			<button mat-button (click)="apply()">Apply</button>
+			<button mat-flat-button color="primary" (click)="apply()">Apply</button>
 		</div>
-	`,
-	styles: []
+	`
 })
 export class BackgroundDialogComponent implements OnInit {
 

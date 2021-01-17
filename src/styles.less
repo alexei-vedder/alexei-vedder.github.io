@@ -26,16 +26,20 @@ body {
 .header {
 	cursor: pointer;
 	padding: 30px 50px;
-	position: sticky;
-	top: 0;
+	margin-bottom: 5vh;
 	.adaptive-font-size(55px);
 	color: RGBA(0, 0, 0, 0.65);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+
+	& > .title {
+		margin: 20px 20px 20px 0;
+	}
 
 	& .custom-background-dialog-button {
-		margin-left: 20px;
 		opacity: 0.8;
 		background-color: rgba(255, 255, 255, 0.3);
 		border-radius: 0;
@@ -43,10 +47,12 @@ body {
 	}
 }
 
+main.container {
+	min-height: 100vh;
+}
+
 .container {
-	height: 100vh;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	transition-duration: 0.3s;
@@ -75,6 +81,14 @@ body {
 background-dialog {
 	& .mat-form-field {
 		width: 450px;
+
+		@media (max-width: 400px) {
+			width: 250px;
+		}
+
+		@media (min-width: 400px) and (max-width: 500px) {
+			width: 280px;
+		}
 	}
 }
 
