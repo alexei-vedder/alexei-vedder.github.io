@@ -7,8 +7,8 @@ import {BackgroundDialogComponent} from "./background-dialog/background-dialog.c
 	selector: 'app',
 	template: `
 		<main dynamicBackground class="container">
-			<header [routerLink]="'/'" class="header">
-				<p class="title">Countdown Date Timer</p>
+			<header class="header">
+				<p class="title" routerLink="/">Countdown Date Timer</p>
 				<button class="custom-background-dialog-button"
 						mat-flat-button
 						(click)="openDialog()">
