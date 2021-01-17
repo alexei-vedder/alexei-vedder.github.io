@@ -19,7 +19,7 @@ export class TimeService {
 		return isToday(date);
 	}
 
-	public getRemainedTime(countdownDate: Date): {days: number, formattedTimeRemainder: string} {
+	public getRemainedTime(countdownDate: Date): { days: number, formattedTimeRemainder: string } {
 		const days = differenceInDays(countdownDate, Date.now());
 
 		const {hours, minutes, seconds} = intervalToDuration({

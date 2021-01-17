@@ -12,6 +12,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
+import {BackgroundDialogComponent} from './background-dialog/background-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,7 +23,8 @@ import {MatNativeDateModule} from "@angular/material/core";
 		AppComponent,
 		TimerComponent,
 		DateSelectComponent,
-		DynamicBackgroundDirective
+		DynamicBackgroundDirective,
+		BackgroundDialogComponent
 	],
 	imports: [
 		BrowserModule,
@@ -28,7 +33,10 @@ import {MatNativeDateModule} from "@angular/material/core";
 		MatDatepickerModule,
 		MatFormFieldModule,
 		MatInputModule,
-		MatNativeDateModule
+		MatNativeDateModule,
+		MatButtonModule,
+		MatDialogModule,
+		FormsModule
 	],
 	providers: [
 		TimeService,

@@ -11,10 +11,13 @@ export class BackgroundService {
 
 	public getBackgroundImageStyleValue(): string {
 		const countdownDate: Date = this.getCountdownDateFromUrlParams();
+		const customBackground = localStorage.getItem("backgroundUrl");
 		let imageName: string;
 
 		if (countdownDate && this.timeService.isToday(countdownDate)) {
 			imageName = Images.THE_DAY_HAS_COME;
+		} else if (customBackground) {
+			return `url(${customBackground})`
 		} else {
 			const currentQuarter: number = this.timeService.getCurrentQuarter();
 			switch (currentQuarter) {
