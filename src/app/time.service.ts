@@ -29,7 +29,7 @@ export class TimeService {
 
 		return {
 			days,
-			formattedTimeRemainder: format(new Date(0, 0, 0, hours, minutes, seconds), "hh:mm:ss")
+			formattedTimeRemainder: format(new Date(0, 0, 0, hours, minutes, seconds), "HH:mm:ss")
 		}
 	}
 }

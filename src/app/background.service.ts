@@ -10,9 +10,7 @@ export class BackgroundService {
 	}
 
 	public getBackgroundImageStyleValue(): string {
-
 		const countdownDate: Date = this.getCountdownDateFromUrlParams();
-
 		let imageName: string;
 
 		if (countdownDate && this.timeService.isToday(countdownDate)) {
@@ -41,7 +39,7 @@ export class BackgroundService {
 	private getCountdownDateFromUrlParams() {
 		// TODO workaround, because ActivatedRoute somehow returns an empty array of params
 		const route = window.location.pathname;
-		const params = route.slice(1).split("/")
-		return this.timeService.getDate(params[1], params[0], params[2]);
+		const params = route.slice(1).split("/");
+		return this.timeService.getDate(params[2], params[1], params[3]);
 	}
 }

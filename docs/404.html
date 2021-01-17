@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<title>Redirecting...</title>
 	<script>
+		/**
+		 *    Workaround for github pages, because it doesn't understand frontend routing
+		 */
 		const path = window.location.pathname.slice(1).split("/").slice(1).join("/");
 		localStorage.setItem('path', path);
 		window.location.href = '/countdown-timer/';
