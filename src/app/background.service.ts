@@ -19,8 +19,8 @@ export class BackgroundService {
 		} else if (customBackground) {
 			return `url(${customBackground})`
 		} else {
-			const currentQuarter: number = this.timeService.getCurrentQuarter();
-			switch (currentQuarter) {
+			const currentSeason: number = this.timeService.getCurrentSeason();
+			switch (currentSeason) {
 				case 1:
 					imageName = Images.WINTER;
 					break;

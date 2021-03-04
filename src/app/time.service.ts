@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {differenceInDays, format, getQuarter, intervalToDuration, isToday} from "date-fns";
+import {addMonths, differenceInDays, format, getQuarter, intervalToDuration, isToday} from "date-fns";
 
 @Injectable()
 export class TimeService {
@@ -7,8 +7,8 @@ export class TimeService {
 	constructor() {
 	}
 
-	public getCurrentQuarter(): number {
-		return getQuarter(Date.now());
+	public getCurrentSeason(): number {
+		return getQuarter(addMonths(Date.now(), 1));
 	}
 
 	public getDate(day: string, month: string, year: string): Date {
